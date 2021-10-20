@@ -1,0 +1,25 @@
+.custom_search .ant-input-wrapper .ant-input-affix-wrapper {
+  background-color: #525252;
+  color: white;
+  border-color: #525252;
+  border-radius: 8px 0px 0px 8px !important;
+}
+
+.custom_search .ant-input-wrapper .ant-input-affix-wrapper .ant-input {
+  background-color: #525252;
+  color: white;
+}
+
+.custom_search .ant-input-wrapper .ant-input-group-addon button {
+  background-color: #525252;
+  color: white;
+  border-radius: 10px !important;
+  border-left: none;
+  border-color: #525252 !important;
+}
+.custom_search .ant-input-wrapper .ant-input-group-addon {
+  background-color: #525252;
+  border-radius: 0px 10px 10px 0 !important;
+  border: none !important;
+  border-color: #525252 !important;
+}
