@@ -1,13 +1,12 @@
 import { Row, Col, Input, Button, Layout, Space, Form } from "antd";
-import HeaderContent from "../../Components/HeaderContent";
 
-const { Header, Footer, Sider, Content } = Layout;
-const Login = () => {
+const { Header, Footer, Content } = Layout;
+const Login = (props) => {
   const submitForm = (values) => {
-    console.log(values);
     localStorage.setItem("userName", values.userName);
     localStorage.setItem("password", values.password);
     localStorage.setItem("isLoggedIn", true);
+    window.location.href = "/cinemaApp";
   };
   return (
     <>
