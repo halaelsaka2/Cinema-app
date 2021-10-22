@@ -18,7 +18,7 @@ const LayoutComponent = (props) => {
 
   const logOut = () => {
     localStorage.clear();
-    window.location.href = "/Cinema-app/login";
+    window.location.href = "/login";
   };
   const menu = (
     <Menu mode="vertical" style={{ backgroundColor: "#525252", color: "lightgray" }}>
@@ -31,7 +31,7 @@ const LayoutComponent = (props) => {
   const onSearch = debounce((e, value) => {
     props.getMoviesBySearch(e.target.value);
     props.saveSearchKeyword(e.target.value);
-    props.history.push("/Cinema-app/cinemaApp/search");
+    props.history.push(`${process.env.PUBLIC_URL}/cinemaApp/search`);
   }, 1000);
   return (
     <Layout>
@@ -46,7 +46,7 @@ const LayoutComponent = (props) => {
         <Row gutter={[16, 16]}>
           <Col lg={8} xl={8} xxl={8} md={8} sm={6} xs={6}>
             <img
-              onClick={() => props.history.push("/Cinema-app/cinemaApp")}
+              onClick={() => props.history.push("/cinemaApp")}
               src="assets/images/logo.svg"
               width={lg || md ? 90 : sm || xs ? 40 : 90}
               alt="logo"
@@ -101,8 +101,8 @@ const LayoutComponent = (props) => {
         style={{ padding: lg || md ? " 0 50px" : sm || xs ? " 0 20px" : " 0 50px", backgroundColor: "black" }}
       >
         <Switch>
-          <Route path="/Cinema-app/cinemaApp" exact component={Home} />
-          <Route path="/Cinema-app/cinemaApp/search" component={SearchMovies} />
+          <Route path={process.env.PUBLIC_URL + "/cinemaApp"} exact component={Home} />
+          <Route path={process.env.PUBLIC_URL + "/cinemaApp/search"} component={SearchMovies} />
         </Switch>
       </Content>
       <FooterComponent />
