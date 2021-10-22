@@ -18,7 +18,7 @@ const LayoutComponent = (props) => {
 
   const logOut = () => {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.href = "/Cinema-app/login";
   };
   const menu = (
     <Menu mode="vertical" style={{ backgroundColor: "#525252", color: "lightgray" }}>

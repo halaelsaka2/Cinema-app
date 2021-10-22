@@ -9,7 +9,7 @@ const Login = (props) => {
     localStorage.setItem("userName", values.userName);
     localStorage.setItem("password", values.password);
     localStorage.setItem("isLoggedIn", true);
-    window.location.href = "/Cinema-app/cinemaApp";
+    window.location.href = "/Cinema-app/cinemaApp#";
   };
   return (
     <>
