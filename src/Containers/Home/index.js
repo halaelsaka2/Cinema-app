@@ -10,28 +10,26 @@ const Home = (props) => {
   useEffect(() => {
     props.getPopularMovies(1);
     props.getTopRatedMovies(1);
-  }, [props]);
+  }, []);
   return (
     <>
       <Row justify="start">
         <h3
           style={{ color: "white", margin: "2rem 0", fontSize: lg || md ? " 16px" : sm || xs ? " 10px" : "16px" }}
         >
-          {" "}
           Most Popular
         </h3>
       </Row>
-      <Movie data={props.popularMovies} />
+      <Movie type="popular" data={props.popularMovies} />
 
       <Row justify="start">
         <h3
           style={{ color: "white", margin: "2rem 0", fontSize: lg || md ? " 16px" : sm || xs ? " 10px" : "16px" }}
         >
-          {" "}
           Top Rated
         </h3>
       </Row>
-      <Movie data={props.topRatedMovies} />
+      <Movie type="topRated" data={props.topRatedMovies} />
     </>
   );
 };
