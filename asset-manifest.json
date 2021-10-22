@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Cinema-app/static/css/main.84c5f00f.chunk.css",
-    "main.js": "/Cinema-app/static/js/main.47acd592.chunk.js",
-    "main.js.map": "/Cinema-app/static/js/main.47acd592.chunk.js.map",
+    "main.js": "/Cinema-app/static/js/main.2004dcb3.chunk.js",
+    "main.js.map": "/Cinema-app/static/js/main.2004dcb3.chunk.js.map",
     "runtime-main.js": "/Cinema-app/static/js/runtime-main.f465d028.js",
     "runtime-main.js.map": "/Cinema-app/static/js/runtime-main.f465d028.js.map",
     "static/css/2.3c0ec5eb.chunk.css": "/Cinema-app/static/css/2.3c0ec5eb.chunk.css",
-    "static/js/2.ebc9adef.chunk.js": "/Cinema-app/static/js/2.ebc9adef.chunk.js",
-    "static/js/2.ebc9adef.chunk.js.map": "/Cinema-app/static/js/2.ebc9adef.chunk.js.map",
+    "static/js/2.aa0d038f.chunk.js": "/Cinema-app/static/js/2.aa0d038f.chunk.js",
+    "static/js/2.aa0d038f.chunk.js.map": "/Cinema-app/static/js/2.aa0d038f.chunk.js.map",
     "index.html": "/Cinema-app/index.html",
     "static/css/2.3c0ec5eb.chunk.css.map": "/Cinema-app/static/css/2.3c0ec5eb.chunk.css.map",
     "static/css/main.84c5f00f.chunk.css.map": "/Cinema-app/static/css/main.84c5f00f.chunk.css.map",
-    "static/js/2.ebc9adef.chunk.js.LICENSE.txt": "/Cinema-app/static/js/2.ebc9adef.chunk.js.LICENSE.txt"
+    "static/js/2.aa0d038f.chunk.js.LICENSE.txt": "/Cinema-app/static/js/2.aa0d038f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f465d028.js",
     "static/css/2.3c0ec5eb.chunk.css",
-    "static/js/2.ebc9adef.chunk.js",
+    "static/js/2.aa0d038f.chunk.js",
     "static/css/main.84c5f00f.chunk.css",
-    "static/js/main.47acd592.chunk.js"
+    "static/js/main.2004dcb3.chunk.js"
   ]
 }
