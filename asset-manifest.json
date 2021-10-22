@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Cinema-app/static/css/main.f395f6e3.chunk.css",
-    "main.js": "/Cinema-app/static/js/main.2004dcb3.chunk.js",
-    "main.js.map": "/Cinema-app/static/js/main.2004dcb3.chunk.js.map",
+    "main.js": "/Cinema-app/static/js/main.150a0cfa.chunk.js",
+    "main.js.map": "/Cinema-app/static/js/main.150a0cfa.chunk.js.map",
     "runtime-main.js": "/Cinema-app/static/js/runtime-main.f465d028.js",
     "runtime-main.js.map": "/Cinema-app/static/js/runtime-main.f465d028.js.map",
     "static/css/2.3c0ec5eb.chunk.css": "/Cinema-app/static/css/2.3c0ec5eb.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.3c0ec5eb.chunk.css",
     "static/js/2.aa0d038f.chunk.js",
     "static/css/main.f395f6e3.chunk.css",
-    "static/js/main.2004dcb3.chunk.js"
+    "static/js/main.150a0cfa.chunk.js"
   ]
 }
