@@ -1,9 +1,6 @@
 import axios from "axios";
 
 const getPopularMovies = async (page) => {
-  console.log(
-    `https://api.themoviedb.org/3/movie/popular?api_key=a54bd452007b5135b6e98aed05131979&language=en-US&page=${page}`
-  );
   return await axios.get(
     `https://api.themoviedb.org/3/movie/popular?api_key=a54bd452007b5135b6e98aed05131979&language=en-US&page=${page}`
   );

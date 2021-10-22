@@ -23,6 +23,7 @@ const Movie = (props) => {
           visible: false,
           mask: (
             <>
+              <img alt="heart" src="assets/images/heart.svg" style={{ position: "absolute", top: 2, right: 3 }} />
               <Space direction="vertical" style={{ fontSize: "12px", fontWeight: 500 }}>
                 <Row gutter={24}>
                   <Col span={24}>

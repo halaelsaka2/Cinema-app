@@ -28,21 +28,15 @@ export default function MovieReducer(state = initialState, action) {
       };
 
     case types.SAVE_SEARCH_KEYWORD:
-      return {
-        ...state,
-        searchKeyword: action.data,
-      };
+      return { ...state, searchKeyword: action.data };
     case types.GET_VIDEOS_MOVIE_ID:
       let trailerVideos = action.data.results.filter((video) => video.type === "Trailer");
       let key = null;
       if (trailerVideos.length > 0) {
         key = action.data.results.filter((video) => video.type === "Trailer")[0].key;
       }
-      return {
-        ...state,
-        videosByMovieId: action.data.results,
-        keyTrailer: key,
-      };
+      return { ...state, videosByMovieId: action.data.results, keyTrailer: key };
+
     default:
       return state;
   }

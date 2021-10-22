@@ -31,7 +31,7 @@ const LayoutComponent = (props) => {
   const onSearch = debounce((e, value) => {
     props.getMoviesBySearch(e.target.value);
     props.saveSearchKeyword(e.target.value);
-    props.history.push(`${process.env.PUBLIC_URL}/cinemaApp/search`);
+    props.history.push(`/cinemaApp/search`);
   }, 1000);
   return (
     <Layout>
@@ -101,8 +101,8 @@ const LayoutComponent = (props) => {
         style={{ padding: lg || md ? " 0 50px" : sm || xs ? " 0 20px" : " 0 50px", backgroundColor: "black" }}
       >
         <Switch>
-          <Route path={process.env.PUBLIC_URL + "/cinemaApp"} exact component={Home} />
-          <Route path={process.env.PUBLIC_URL + "/cinemaApp/search"} component={SearchMovies} />
+          <Route path={"/cinemaApp"} exact component={Home} />
+          <Route path={"/cinemaApp/search"} component={SearchMovies} />
         </Switch>
       </Content>
       <FooterComponent />

@@ -9,7 +9,7 @@ const ProtectedRoute = ({ component: Component, isLoggedIn, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: process.env.PUBLIC_URL + "/login",
+              pathname: "/login",
               state: { from: props.location },
             }}
           />

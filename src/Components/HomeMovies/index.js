@@ -10,26 +10,28 @@ import { useState } from "react";
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
 const HomeMovie = (props) => {
+  const [currentPopularPage, setCurrentPopularPage] = useState(1);
+  const [currentTopRatedPage, setCurrentTopRatedPage] = useState(1);
   const { lg, sm, xl, md, xxl } = useBreakpoint();
-  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <Row gutter={[16, 16]}>
       <Swiper
         spaceBetween={50}
-        slidesPerView={xl || xxl ? 5.5 : lg ? 4 : md ? 3 : sm ? 2 : 1}
+        slidesPerView={xl || xxl ? 5 : lg ? 4 : md ? 3 : sm ? 2 : 1}
         navigation
         scrollbar={{ draggable: true }}
         style={{ color: "white", textAlign: "center" }}
-        onReachEnd={(e) => {
-          if (props.type === "popular") {
-            props.getPopularMovies(currentPage + 1);
-          } else {
-            props.getTopRatedMovies(currentPage + 1);
+        onSlideChange={(e) => {
+          if (e.isEnd === true) {
+            if (props.type === "popular") {
+              props.getPopularMovies(currentPopularPage + 1);
+            } else {
+              props.getTopRatedMovies(currentTopRatedPage + 1);
+            }
+            e.slideTo(0);
           }
-          setCurrentPage(currentPage + 1);
-          e.slideTo(0);
         }}
-        watchSlidesProgress={true}
       >
         {props.data.length > 0 ? (
           props.data.map((movie) => (
@@ -45,8 +47,14 @@ const HomeMovie = (props) => {
   );
 };
 const mapStateToProps = (state, ownProps) => {
-  return {};
+  return {
+    currentPopularPage: state.MovieReducer.currentPopularPage,
+    currentTopRatedPage: state.MovieReducer.currentTopRatedPage,
+  };
 };
-const mapDispatchToProps = { getPopularMovies, getTopRatedMovies };
+const mapDispatchToProps = {
+  getPopularMovies,
+  getTopRatedMovies,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeMovie);
