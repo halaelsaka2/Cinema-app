@@ -8,9 +8,9 @@ const Routes = ({ history }) => {
   return (
     <ConnectedRouter history={history}>
       <div>
-        <Route path="/" exact component={Login} />
-        <Route path="/login" component={Login} />
-        <ProtectedRoute path="/cinemaApp" component={App} isLoggedIn={isLoggedIn} />
+        <Route path="/Cinema-app/" exact component={Login} />
+        <Route path="/Cinema-app/login" component={Login} />
+        <ProtectedRoute path="/Cinema-app/cinemaApp" component={App} isLoggedIn={isLoggedIn} />
       </div>
     </ConnectedRouter>
   );
