@@ -3,8 +3,9 @@ import { Row, Col, Rate, Typography, Space, Image } from "antd";
 import VideoModal from "../Video";
 import { getVideosByMovieId } from "../../Redux/Movie/Actions";
 import { connect } from "react-redux";
+import "./style.css";
 
-const { Paragraph } = Typography;
+const { Paragraph, Text } = Typography;
 const Movie = (props) => {
   const [visible, setVisible] = useState(false);
   const [ellipsis, setEllipsis] = useState(true);
@@ -14,28 +15,24 @@ const Movie = (props) => {
   const okHandler = () => {
     setVisible(false);
   };
+
   return (
     <>
       <Image
         preview={{
+          maskClassName: "mask_data",
           visible: false,
           mask: (
             <>
-              <Space direction="vertical" style={{ fontSize: "10px" }}>
+              <Space direction="vertical" style={{ fontSize: "12px", fontWeight: 500 }}>
                 <Row gutter={24}>
                   <Col span={24}>
-                    <Rate disabled style={{ fontSize: "10px" }} allowHalf value={props.movie.vote_average / 2} />
+                    <Rate disabled style={{ fontSize: "13px" }} allowHalf value={props.movie.vote_average / 2} />
                   </Col>
                 </Row>
                 <Row gutter={24}>
                   <Col span={24}>
-                    <Paragraph
-                      ellipsis={ellipsis ? { rows: 2, expandable: ellipsis, symbol: "more" } : false}
-                      style={{ color: "white" }}
-                      onClick={() => {
-                        setEllipsis(false);
-                      }}
-                    >
+                    <Paragraph ellipsis={{ rows: 3 }} style={{ color: "white" }}>
                       {props.movie.overview}
                     </Paragraph>
                   </Col>

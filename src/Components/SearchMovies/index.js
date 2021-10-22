@@ -8,7 +8,7 @@ const SearchMovies = (props) => {
   };
   return (
     <>
-      <Row gutter={[16, 16]} style={{ marginTop: "2rem" }}>
+      <Row gutter={[16, 16]} style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
         {props.moviesBySearch.length > 0 ? (
           props.moviesBySearch.map((movie) => (
             <Col
@@ -29,15 +29,11 @@ const SearchMovies = (props) => {
       <Row gutter={24} justify="center">
         <Col span={24} align="center" style={{ marginTop: "2rem" }}>
           <Pagination
-            // simple={true}
             total={props.countOfMoviesBySearch}
             responsive={true}
-            hideOnSinglePage={true}
+            // hideOnSinglePage={true}
             onChange={paginateHandler}
             pageSize={20}
-            className="custom_pagination"
-            showSizeChanger={false}
-            showQuickJumper={false}
           />
         </Col>
       </Row>

@@ -23,3 +23,16 @@
   border: none !important;
   border-color: #525252 !important;
 }
+.ant-dropdown-menu {
+  border-radius: 8px;
+  
+}
+.ant-dropdown-menu-item:hover,
+.ant-dropdown-menu-submenu-title:hover {
+  background-color: grey;
+}
+
+.ant-dropdown-menu-item {
+  border-radius: 8px;
+  padding: 5px 23px;
+}

@@ -1,9 +1,11 @@
 import { Col, Modal, Row } from "antd";
+import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
 
 const VideoModal = (props) => {
+  const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
   const { visible, handleOk, handleCancel } = props;
   const [playing, setPlaying] = useState(true);
   const cancelHandler = () => {
@@ -12,7 +14,7 @@ const VideoModal = (props) => {
   };
   return (
     <Modal
-      width={700}
+      width={xxl || xl ? 900 : lg || md ? 600 : sm ? 400 : 250}
       bodyStyle={{ backgroundColor: "black", minHeight: "250px" }}
       closable={false}
       footer={false}
@@ -23,7 +25,7 @@ const VideoModal = (props) => {
       {props.keyTrailer ? (
         <ReactPlayer
           stopOnUnmount={true}
-          // playing={playing}
+          width={xxl || xl ? 900 : lg || md ? 600 : sm ? 400 : 250}
           controls
           url={`https://www.youtube.com/watch?v=${props.keyTrailer}`}
         />
