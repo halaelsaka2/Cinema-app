@@ -9,11 +9,12 @@ import "./style.css";
 import { connect } from "react-redux";
 import SearchMovies from "../../Components/SearchMovies";
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
+import FooterComponent from "../../Components/Footer";
 const debounce = require("lodash.debounce");
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 const { Search } = Input;
 const LayoutComponent = (props) => {
-  const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
+  const { lg, sm, xs, md } = useBreakpoint();
 
   const logOut = () => {
     localStorage.clear();
@@ -44,7 +45,12 @@ const LayoutComponent = (props) => {
       >
         <Row gutter={[16, 16]}>
           <Col lg={8} xl={8} xxl={8} md={8} sm={6} xs={6}>
-            <img src="/assets/images/logo.svg" width={lg || md ? 90 : sm || xs ? 40 : 90} />
+            <img
+              onClick={() => props.history.push("/cinemaApp")}
+              src="/assets/images/logo.svg"
+              width={lg || md ? 90 : sm || xs ? 40 : 90}
+              alt="logo"
+            />
           </Col>
           <Col
             lg={8}
@@ -76,6 +82,7 @@ const LayoutComponent = (props) => {
                 className="ant-dropdown-link"
                 style={{ color: "white", fontSize: lg || md ? "16px" : sm || xs ? " 10px" : "16px" }}
                 onClick={(e) => e.preventDefault()}
+                href="."
               >
                 <Space>
                   {lg || md
@@ -98,18 +105,7 @@ const LayoutComponent = (props) => {
           <Route path="/cinemaApp/search" component={SearchMovies} />
         </Switch>
       </Content>
-      <Footer style={{ textAlign: "center", backgroundColor: "black", color: "white" }}>
-        <Row justify="center">
-          <Col>
-            <Space>
-              <img src="/assets/images/facebook.svg" />
-              <img src="/assets/images/twitter.svg" />
-              <img src="/assets/images/instagram.svg" />
-            </Space>
-            <div>© 2021 Cinema App - All Right Reserved</div>
-          </Col>
-        </Row>
-      </Footer>
+      <FooterComponent />
     </Layout>
   );
 };

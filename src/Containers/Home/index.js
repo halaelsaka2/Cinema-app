@@ -6,11 +6,11 @@ import Movie from "../../Components/HomeMovies";
 import { getPopularMovies, getTopRatedMovies } from "../../Redux/Movie/Actions";
 
 const Home = (props) => {
-  const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
+  const { lg, sm, xs, md } = useBreakpoint();
   useEffect(() => {
     props.getPopularMovies(1);
     props.getTopRatedMovies(1);
-  }, []);
+  }, [props]);
   return (
     <>
       <Row justify="start">

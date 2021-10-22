@@ -31,7 +31,7 @@ const SearchMovies = (props) => {
           <Pagination
             total={props.countOfMoviesBySearch}
             responsive={true}
-            // hideOnSinglePage={true}
+            hideOnSinglePage={true}
             onChange={paginateHandler}
             pageSize={20}
           />

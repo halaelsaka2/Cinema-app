@@ -7,8 +7,7 @@ import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
 const HomeMovie = (props) => {
-  const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
-  console.log(lg);
+  const { lg, sm, xl, md, xxl } = useBreakpoint();
   return (
     <Row gutter={[16, 16]}>
       <Swiper

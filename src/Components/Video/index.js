@@ -1,15 +1,12 @@
 import { Col, Modal, Row } from "antd";
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
-import { useState } from "react";
 import ReactPlayer from "react-player";
 import { connect } from "react-redux";
 
 const VideoModal = (props) => {
   const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
   const { visible, handleOk, handleCancel } = props;
-  const [playing, setPlaying] = useState(true);
   const cancelHandler = () => {
-    setPlaying(false);
     handleCancel();
   };
   return (
@@ -32,7 +29,9 @@ const VideoModal = (props) => {
       ) : (
         <Row gutter={24} justify="center">
           <Col span={24} align="center">
-            <h3 style={{ color: "white" }}>No Trailer Video</h3>
+            <h3 style={{ color: "white", fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px" }}>
+              No Trailer Video
+            </h3>
           </Col>
         </Row>
       )}

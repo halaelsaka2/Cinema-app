@@ -1,7 +1,8 @@
-import { Row, Col, Input, Button, Layout, Space, Form } from "antd";
+import { Row, Col, Input, Button, Layout, Form } from "antd";
 import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
+import FooterComponent from "../../Components/Footer";
 
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 const Login = (props) => {
   const { lg, sm, xs, xl, md, xxl } = useBreakpoint();
   const submitForm = (values) => {
@@ -16,11 +17,11 @@ const Login = (props) => {
         <Header style={{ backgroundColor: "black", padding: "0 13px 0 50px" }}>
           <Row gutter={[16, 16]}>
             <Col lg={12} xl={12} xxl={12} md={12} sm={12} xs={12}>
-              <img src="/assets/images/logo.svg" width={lg || md ? 90 : sm || xs ? 60 : 90} />
+              <img src="/assets/images/logo.svg" alt="logo" width={lg || md ? 90 : sm || xs ? 60 : 90} />
             </Col>
             {(xl || xxl || lg || md) && (
               <Col lg={12} xl={12} xxl={12} md={12} sm={12} xs={12} align="right" style={{ paddingRight: "0" }}>
-                <img src="/assets/images/login-shape.svg" height="570px" />
+                <img src="/assets/images/login-shape.svg" alt="login_shape" height="570px" />
               </Col>
             )}
           </Row>
@@ -102,41 +103,8 @@ const Login = (props) => {
             </Row>
           </Form>
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            fontSize: lg || md ? "16px" : sm || xs ? "13px" : "16px",
-            backgroundColor: "black",
-            color: "white",
-            padding: lg || md ? 13 : sm || xs ? 8 : 13,
-          }}
-        >
-          <Row justify="center">
-            <Col>
-              <Space>
-                <img
-                  src="/assets/images/facebook.svg"
-                  style={{
-                    fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
-                  }}
-                />
-                <img
-                  src="/assets/images/twitter.svg"
-                  style={{
-                    fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
-                  }}
-                />
-                <img
-                  src="/assets/images/instagram.svg"
-                  style={{
-                    fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
-                  }}
-                />
-              </Space>
-              <div>© 2021 Cinema App - All Right Reserved</div>
-            </Col>
-          </Row>
-        </Footer>
+
+        <FooterComponent />
       </Layout>
     </>
   );

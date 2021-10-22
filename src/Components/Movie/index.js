@@ -5,10 +5,9 @@ import { getVideosByMovieId } from "../../Redux/Movie/Actions";
 import { connect } from "react-redux";
 import "./style.css";
 
-const { Paragraph, Text } = Typography;
+const { Paragraph } = Typography;
 const Movie = (props) => {
   const [visible, setVisible] = useState(false);
-  const [ellipsis, setEllipsis] = useState(true);
   const cancleHandler = () => {
     setVisible(false);
   };
