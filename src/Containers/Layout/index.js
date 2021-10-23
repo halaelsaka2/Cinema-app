@@ -85,11 +85,8 @@ const LayoutComponent = (props) => {
                 href="."
               >
                 <Space>
-                  {lg || md
-                    ? localStorage.getItem("userName")
-                    : sm || xs
-                    ? "Profile"
-                    : localStorage.getItem("userName")}
+                  {localStorage.getItem("userName").split(" ").shift().charAt(0) +
+                    localStorage.getItem("userName").split(" ").pop().charAt(0).toUpperCase()}
                   <DownOutlined />
                 </Space>
               </a>
