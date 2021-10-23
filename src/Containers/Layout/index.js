@@ -47,9 +47,10 @@ const LayoutComponent = (props) => {
           <Col lg={8} xl={8} xxl={8} md={8} sm={6} xs={6}>
             <img
               onClick={() => props.history.push("/cinemaApp")}
-              src="assets/images/logo.svg"
+              src="/assets/images/logo.svg"
               width={lg || md ? 90 : sm || xs ? 40 : 90}
               alt="logo"
+              style={{ cursor: "pointer" }}
             />
           </Col>
           <Col
@@ -85,7 +86,7 @@ const LayoutComponent = (props) => {
                 href="."
               >
                 <Space>
-                  {localStorage.getItem("userName").split(" ").shift().charAt(0) +
+                  {localStorage.getItem("userName").split(" ").shift().charAt(0).toUpperCase() +
                     localStorage.getItem("userName").split(" ").pop().charAt(0).toUpperCase()}
                   <DownOutlined />
                 </Space>

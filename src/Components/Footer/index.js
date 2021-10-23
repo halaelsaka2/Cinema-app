@@ -18,21 +18,21 @@ const FooterComponent = () => {
         <Col>
           <Space>
             <img
-              src="assets/images/facebook.svg"
+              src="/assets/images/facebook.svg"
               style={{
                 fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
               }}
               alt="facebook"
             />
             <img
-              src="assets/images/twitter.svg"
+              src="/assets/images/twitter.svg"
               style={{
                 fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
               }}
               alt="twitter"
             />
             <img
-              src="assets/images/instagram.svg"
+              src="/assets/images/instagram.svg"
               style={{
                 fontSize: lg || md ? "16px" : sm || xs ? " 13px" : "16px",
               }}

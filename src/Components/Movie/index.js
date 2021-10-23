@@ -8,11 +8,27 @@ import "./style.css";
 const { Paragraph } = Typography;
 const Movie = (props) => {
   const [visible, setVisible] = useState(false);
+  const [loved, setLoved] = useState(
+    JSON.parse(localStorage.getItem("lovedMovies")).includes(props.movie.id) ? true : false
+  );
   const cancleHandler = () => {
     setVisible(false);
   };
   const okHandler = () => {
     setVisible(false);
+  };
+
+  const loveHandler = (e, loved) => {
+    e.stopPropagation();
+    setLoved(loved);
+    let movies = JSON.parse(localStorage.getItem("lovedMovies"));
+    if (loved) {
+      movies.push(props.movie.id);
+      localStorage.setItem("lovedMovies", JSON.stringify(movies));
+    } else {
+      let newMovies = movies.filter((id) => id !== props.movie.id);
+      localStorage.setItem("lovedMovies", JSON.stringify(newMovies));
+    }
   };
 
   return (
@@ -23,7 +39,18 @@ const Movie = (props) => {
           visible: false,
           mask: (
             <>
-              <img alt="heart" src="assets/images/heart.svg" style={{ position: "absolute", top: 2, right: 3 }} />
+              <img
+                alt="heart"
+                src="/assets/images/heart.svg"
+                style={{ position: "absolute", top: 2, right: 3, display: loved ? "none" : "block" }}
+                onClick={(e) => loveHandler(e, true)}
+              />
+              <img
+                alt="filled-heart"
+                src="/assets/images/heart-329.svg"
+                style={{ position: "absolute", top: 2, right: 3, display: loved ? "block" : "none" }}
+                onClick={(e) => loveHandler(e, false)}
+              />
               <Space direction="vertical" style={{ fontSize: "12px", fontWeight: 500 }}>
                 <Row gutter={24}>
                   <Col span={24}>
