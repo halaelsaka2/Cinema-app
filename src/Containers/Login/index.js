@@ -11,8 +11,7 @@ const Login = (props) => {
     localStorage.setItem("password", values.password);
     localStorage.setItem("isLoggedIn", true);
     localStorage.setItem("lovedMovies", JSON.stringify(lovedMovies));
-
-    window.location.href = process.env.PUBLIC_URL + "/cinemaApp";
+    window.location.href = "/cinemaApp";
   };
   return (
     <>
@@ -20,11 +19,11 @@ const Login = (props) => {
         <Header style={{ backgroundColor: "black", padding: "0 13px 0 50px" }}>
           <Row gutter={[16, 16]}>
             <Col lg={12} xl={12} xxl={12} md={12} sm={12} xs={12}>
-              <img src="assets/images/logo.svg" alt="logo" width={lg || md ? 90 : sm || xs ? 60 : 90} />
+              <img src="/assets/images/logo.svg" alt="logo" width={lg || md ? 90 : sm || xs ? 60 : 90} />
             </Col>
             {(xl || xxl || lg || md) && (
               <Col lg={12} xl={12} xxl={12} md={12} sm={12} xs={12} align="right" style={{ paddingRight: "0" }}>
-                <img src="assets/images/login-shape.svg" alt="login_shape" height="570px" />
+                <img src="/assets/images/login-shape.svg" alt="login_shape" height="570px" />
               </Col>
             )}
           </Row>
