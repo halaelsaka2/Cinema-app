@@ -8,9 +8,9 @@ const Routes = ({ history }) => {
   return (
     <ConnectedRouter history={history}>
       <div>
-        <Route path="/" exact component={Login} />
-        <Route path="/login" component={Login} />
-        <ProtectedRoute path="/cinemaApp" component={App} isLoggedIn={isLoggedIn} />
+        <Route path={process.env.PUBLIC_URL + "/"} exact component={Login} />
+        <Route path={process.env.PUBLIC_URL + "/login"} component={Login} />
+        <ProtectedRoute path={process.env.PUBLIC_URL + "/cinemaApp"} component={App} isLoggedIn={isLoggedIn} />
       </div>
     </ConnectedRouter>
   );

@@ -41,13 +41,13 @@ const Movie = (props) => {
             <>
               <img
                 alt="heart"
-                src="/assets/images/heart.svg"
+                src="assets/images/heart.svg"
                 style={{ position: "absolute", top: 2, right: 3, display: loved ? "none" : "block" }}
                 onClick={(e) => loveHandler(e, true)}
               />
               <img
                 alt="filled-heart"
-                src="/assets/images/heart-329.svg"
+                src="assets/images/heart-329.svg"
                 style={{ position: "absolute", top: 2, right: 3, display: loved ? "block" : "none" }}
                 onClick={(e) => loveHandler(e, false)}
               />
