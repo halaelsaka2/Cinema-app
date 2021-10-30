@@ -4,7 +4,7 @@ import "./index.css";
 // import ProtectedApp from "./Containers/ProtectedApp";
 
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Routes from "./Containers/Routes";
 import { store, history } from "./Redux/store";
 import "swiper/swiper.min.css";
@@ -12,9 +12,9 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <Routes history={history} />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById("root")
 );
